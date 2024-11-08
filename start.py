@@ -4,7 +4,6 @@ import telebot
 
 
 app = Flask(__name__)
-TOKEN = '7124362675:AAGJhFXcJUpiLQKU9uZTYCkvRRumWkJ7BTM'
 bot = telebot.TeleBot(TOKEN)
 
 @app.route('/webhook', methods=['POST'])
