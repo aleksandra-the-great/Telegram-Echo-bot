@@ -17,14 +17,10 @@ bot = telebot.TeleBot(TOKEN)
 def webhook():
     data = request.get_json()
     message = data.get("message", "")
-    user_id = data.get("user_id", None)
-    
+    user_id = data.get("user_id", "")
+    # Проверяем, что user_id определен, чтобы избежать ошибки
     if user_id:
-        # Отправляем сообщение обратно пользователю
         bot.send_message(user_id, message)
-    else:
-        return jsonify({"status": "error", "message": "user_id is missing"}), 400
-    
     return jsonify({"status": "ok"})
 
 if __name__ == "__main__":
