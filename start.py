@@ -40,4 +40,4 @@ def webhook():
 
 if __name__ == "__main__":
     # Запуск приложения Flask
-    app.run(port=5000)
+    app.run
