@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Получаем токен из переменной окружения
 TOKEN = os.getenv("TOKEN")
-
+print(TOKEN)
 # Проверка на случай, если токен отсутствует
 if TOKEN is None:
     raise ValueError("TOKEN is not set. Please set the TELEGRAM_BOT_TOKEN environment variable.")
