@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Mini App</title>
+</head>
+<body>
+    <h1>Welcome to the Telegram Mini App!</h1>
+    <button onclick="sendDataToTelegram()">Send Hello</button>
+
+    <script>
+        function sendDataToTelegram() {
+            const tg = window.Telegram.WebApp;
+            tg.sendData("Hello from Mini App!"); 
+        }
+    </script>
+</body>
+</html>
