@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Mini App</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #E2E2E2, #C9D6FF);
+            position: relative; /* Для правильной работы абсолютного позиционирования */
+        }
+
+        .button {
+            width: 120px;
+            height: 120px;
+            background-color: #1E90FF;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-top: 40px; /* Добавлено для отступа */
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .top-center {
+            display: flex;
+            gap: 20px; /* Добавлено расстояние между элементами */
+            position: absolute;
+            top: 16px;
+        }
+
+        .top-center-item {
+            background-color: #1E90FF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .top-center-item:hover {
+            background-color: #1C86EE;
+        }
+
+        .top-left {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            font-size: 24px; /* Увеличен размер иконки */
+            color: #1E90FF;
+            cursor: pointer;
+        }
+
+        .top-left:hover {
+            color: #1C86EE;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-left">
+        <a href="#"><i class="fa fa-cog"></i></a> <!--Иконка настроек-->
+    </div>
+    
+    <div class="top-center">
+        <a href="#" class="top-center-item">Add Item</a>
+        <a href="#" class="top-center-item">Add File</a>
+    </div>
+
+    <button class="button" onclick="sendDataToTelegram()">Talk</button>
+
+    <script>
+        function sendDataToTelegram() {
+            const tg = window.Telegram.WebApp;
+            tg.sendData("Hello from Mini App!");
+        }
+    </script>
+
+    <!-- Подключение Font Awesome для значков -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>

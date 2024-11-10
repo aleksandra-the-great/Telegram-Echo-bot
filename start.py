@@ -52,7 +52,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     # Отправляем HTML страницу с встроенным JS кодом
-    return render_template('miniapp.html')
+    return render_template('accounter.html')
 
 if __name__ == "__main__":
     app.run()
