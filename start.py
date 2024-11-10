@@ -49,8 +49,8 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/miniapp')
-def miniapp():
+@app.route('/')
+def index():
     # Отправляем HTML страницу с встроенным JS кодом
     return render_template('miniapp.html')
 
